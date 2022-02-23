@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .tb1{
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <table class="tb1">
+        <tr><th>Amount</th>
+            <th>FromCurrence</th>
+            <th>To Currency</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="number" id="nhapgt">
+            </td>
+            <td>
+                <select name="quality" id="s1" onchange="select()">
+                    <option value="1">VNĐ</option>
+                    <option value="2">USD</option>
+                </select>
+            </td>
+            <td>
+                <select name="quality" id="s2" onchange="select()" >
+                    <option value="1">VNĐ</option>
+                    <option value="2">USD</option>
+                </select>
+            </td>
+            <td></td>
+            <td>
+                <button onclick="convert()">Convert</button>
+            </td>
+        </tr>
+
+        <tr>
+            <h2 id="rs"></h2>
+        </tr>
+    </table>
+    <script>
+        function convert() {
+            console.log('nd --->');
+            let nhapgiatri = document.getElementById('nhapgt').value;
+            let s1 = document.getElementById('s1').value;
+            let s2 = document.getElementById('s2').value;
+
+            if(s1 == s2){
+
+                if(s1 == '1'){
+                    alert(nhapgiatri + '.' + 'VNĐ');
+                }else{
+                    alert(nhapgiatri + '.' + 'USD')
+                }
+
+            }
+
+            if(s1 == '1' && s2 == '2'){
+                alert(nhapgiatri/23000 + '.' + 'USD')
+            }
+
+            if(s1 == '2' && s2 == '1'){
+                alert(nhapgiatri*23000 + '.' + 'VND');
+            }
+        }
+    </script>
+</body>
+</html>
